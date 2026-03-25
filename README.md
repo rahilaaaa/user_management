@@ -51,8 +51,8 @@ docker compose version
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/rahilaaaa/admin_management
-cd admin_management
+git clone https://github.com/rahilaaaa/user_management
+cd user_management
 ```
 
 ---
