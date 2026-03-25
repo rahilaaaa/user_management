@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    env_file:
+      - ./backend/sample_jwt/.env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+    restart: unless-stopped
+
+  backend:
+    build: ./backend/sample_jwt
+    container_name: django_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/sample_jwt/.env
+    environment:
+      DB_HOST : db
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+    volumes:
+      - ./backend/sample_jwt:/app  # For live code updates
+
+  frontend:
+    build: ./frontend/auth_demo
+    container_name: react_frontend
+    ports:
+      - "5173:5173"
+    networks:
+      - mynetwork
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/auth_demo:/app  # For live code updates
+    
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:
+    driver: bridge

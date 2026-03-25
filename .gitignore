@@ -1,0 +1,43 @@
+# Global ignores
+.env
+.vscode/
+*.log
+*.DS_Store
+Thumbs.db
+
+# Backend ignores
+backend/sample_jwt/.env
+backend/sample_jwt/env/ 
+backend/sample_jwt/media/
+backend/sample_jwt/migrations/
+backend/sample_jwt/__pycache__/
+backend/sample_jwt/*.pyc 
+backend/sample_jwt/*.pyo
+backend/sample_jwt/*.pyd
+backend/sample_jwt/db.sqlite3
+backend/sample_jwt/staticfiles/
+backend/sample_jwt/*.log
+
+# Frontend ignores
+frontend/auth_demo/logs
+frontend/auth_demo/*.log
+frontend/auth_demo/npm-debug.log*
+frontend/auth_demo/yarn-debug.log*
+frontend/auth_demo/yarn-error.log*
+frontend/auth_demo/pnpm-debug.log*
+frontend/auth_demo/lerna-debug.log*
+frontend/auth_demo/node_modules/
+frontend/auth_demo/dist/
+frontend/auth_demo/-ssr/
+frontend/auth_demo/*.local
+
+# Editor/IDE ignores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
